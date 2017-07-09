@@ -1,0 +1,45 @@
+{
+  "name": "bin-manager",
+  "version": "1.0.0",
+  "description": "Binary wrapper that makes your programs seamlessly available as local dependencies",
+  "license": "MIT",
+  "repository": "simonepri/bin-manager",
+  "author": {
+    "name": "Simone Primarosa",
+    "url": "https://github.com/simonepri"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo --space && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "binaries",
+    "binary",
+    "download",
+    "bin",
+    "local",
+    "wrapper",
+    "manager"
+  ],
+  "dependencies": {
+    "del": "^3.0.0",
+    "download": "^6.2.5",
+    "execa": "^0.7.0",
+    "lazy-req": "^2.0.0",
+    "os-filter-obj": "^1.0.3"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "nock": "^9.0.13",
+    "path-exists": "^3.0.0",
+    "pify": "^3.0.0",
+    "rimraf": "^2.2.8",
+    "tempfile": "^2.0.0",
+    "xo": "*"
+  }
+}
