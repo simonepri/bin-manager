@@ -12,7 +12,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo --space && ava"
+    "test": "xo --space && ava",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "files": [
     "index.js"
@@ -35,7 +36,9 @@
   },
   "devDependencies": {
     "ava": "*",
+    "codecov": "^2.2.0",
     "nock": "^9.0.13",
+    "nyc": "^11.0.3",
     "path-exists": "^3.0.0",
     "pify": "^3.0.0",
     "rimraf": "^2.2.8",
