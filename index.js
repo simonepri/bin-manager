@@ -47,7 +47,7 @@ function binManager(destFolder, slugName) {
   /**
    * Get or set the binary
    *
-   * @param {String} bin
+   * @param {String} [bin]
    * @api public
    */
 
@@ -93,6 +93,7 @@ function binManager(destFolder, slugName) {
   /**
    * Load existing files or download them
    *
+   * @param {Object}   [opts]
    * @param {Function} callback
    * @api public
    */
@@ -120,6 +121,7 @@ function binManager(destFolder, slugName) {
   /**
    * Delete existing files
    *
+   * @param {Object}   [opts]
    * @param {Function} callback
    * @api public
    */
@@ -135,20 +137,27 @@ function binManager(destFolder, slugName) {
   /**
    * Run the binray
    *
+   * @param {Array}    [argv]
+   * @param {Object}   [opts]
    * @param {Function} callback
    * @api public
    */
 
   function run(argv, opts, callback) {
-    if (!Array.isArray(argv)) {
-      opts = argv;
-      callback = opts;
-      argv = [];
+    const args = [].slice.call(arguments);
+
+    callback = args.pop();
+    if (args.length === 2) {
+      opts = args.pop() || {};
+      argv = args.pop() || [];
+    } else if (typeof args[0] === 'object' && !Array.isArray(args[0])) {
+      opts = args.pop() || {};
+    } else if (Array.isArray(args[0])) {
+      argv = args.pop() || [];
+    } else {
+      argv = [argv] || [];
     }
-    if (typeof opts !== 'object') {
-      callback = opts;
-      opts = {};
-    }
+
     load(err => {
       if (err) {
         callback(err);
@@ -165,6 +174,7 @@ function binManager(destFolder, slugName) {
   /**
    * Download files
    *
+   * @param {Object}   [opts]
    * @param {Function} callback
    * @api pivate
    */
