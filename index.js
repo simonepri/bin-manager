@@ -139,16 +139,22 @@ function binManager(destFolder, slugName) {
    * @api public
    */
 
-  function run(argv, callback) {
+  function run(argv, opts, callback) {
     if (!Array.isArray(argv)) {
-      argv = [argv];
+      opts = argv;
+      callback = opts;
+      argv = [];
+    }
+    if (typeof opts !== 'object') {
+      callback = opts;
+      opts = {};
     }
     load(err => {
       if (err) {
         callback(err);
         return;
       }
-      execa()(bin(), argv).then(result => {
+      execa()(bin(), argv, opts).then(result => {
         callback(null, result);
       }).catch(err => {
         callback(err);
