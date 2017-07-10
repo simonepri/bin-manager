@@ -24,9 +24,9 @@ function binManager(destFolder, slugName) {
   /**
    * Get or set files to download
    *
-   * @param {String} src
-   * @param {String} os
-   * @param {String} arch
+   * @param {String} [src]
+   * @param {String} [os]
+   * @param {String} [arch]
    * @api public
    */
 
@@ -99,10 +99,15 @@ function binManager(destFolder, slugName) {
    */
 
   function load(opts, callback) {
+    const args = [].slice.call(arguments);
+    callback = args.pop();
+    opts = args.shift() || {};
+
     if (!_bin) {
       callback(new Error('No binary path setted. Call use(path).'));
       return;
     }
+
     fs.stat(bin(), err => {
       if (err && err.code === 'ENOENT') {
         fetch(opts, callback);
@@ -127,6 +132,10 @@ function binManager(destFolder, slugName) {
    */
 
   function unload(opts, callback) {
+    const args = [].slice.call(arguments);
+    callback = args.pop();
+    opts = args.shift() || {};
+
     del()(path(), opts).then(() => {
       callback();
     }).catch(err => {
@@ -186,7 +195,6 @@ function binManager(destFolder, slugName) {
       callback(new Error('No binary found matching your system. It\'s probably not supported.'));
       return;
     }
-    opts = opts || {extract: true};
 
     const bfpath = path();
 
