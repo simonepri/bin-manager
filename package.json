@@ -1,6 +1,6 @@
 {
   "name": "bin-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Binary wrapper that makes your programs seamlessly available as local dependencies",
   "license": "MIT",
   "repository": "simonepri/bin-manager",
@@ -46,6 +46,6 @@
     "xo": "*"
   },
   "xo": {
-   "space": true
+    "space": true
   }
 }
