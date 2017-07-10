@@ -53,9 +53,10 @@ Default: `''`
 Accepts an unique slug for the binary.<br>
 The binary will be downloaded inside the path: `dist/slug`
 
-### .src(url, [os], [arch])
+### .src([url], [os], [arch])
 
 Adds a source to download.
+If no argument is passed the current array of sources is returned.
 
 #### url
 
