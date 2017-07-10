@@ -101,7 +101,7 @@ function binManager(destFolder, slugName) {
   function load(opts, callback) {
     const args = [].slice.call(arguments);
     callback = args.pop();
-    opts = args.shift() || {};
+    opts = args.shift() || {extract: true};
 
     if (!_bin) {
       callback(new Error('No binary path setted. Call use(path).'));
