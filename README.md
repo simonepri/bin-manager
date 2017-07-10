@@ -1,8 +1,6 @@
 # NodeJS Binary Manager [![Travis CI](https://travis-ci.org/simonepri/bin-manager.svg?branch=master)](https://travis-ci.org/simone/bin-manager) [![Codecov](https://img.shields.io/codecov/c/github/simonepri/bin-manager/master.svg)](https://codecov.io/gh/simonepri/bin-manager) [![npm](https://img.shields.io/npm/dm/bin-manager.svg)](https://www.npmjs.com/package/bin-manager) [![npm version](https://img.shields.io/npm/v/bin-manager.svg)](https://www.npmjs.com/package/bin-manager)
 > 🌀 Binaries available as local nodeJS dependencies
 
-> Binary wrapper that makes your programs seamlessly available as local dependencies
-
 
 ## Install
 
