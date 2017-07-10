@@ -44,5 +44,8 @@
     "rimraf": "^2.2.8",
     "tempfile": "^2.0.0",
     "xo": "*"
+  },
+  "xo": {
+   "space": true
   }
 }
