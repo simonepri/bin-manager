@@ -97,14 +97,14 @@ function binManager(destFolder, slugName) {
    * @api public
    */
 
-  function load(callback) {
+  function load(opts, callback) {
     if (!_bin) {
       callback(new Error('No binary path setted. Call use(path).'));
       return;
     }
     fs.stat(bin(), err => {
       if (err && err.code === 'ENOENT') {
-        fetch(callback);
+        fetch(opts, callback);
         return;
       }
 
@@ -163,16 +163,14 @@ function binManager(destFolder, slugName) {
    * @api pivate
    */
 
-  function fetch(callback) {
+  function fetch(opts, callback) {
     const files = remote();
 
     if (files.length === 0) {
       callback(new Error('No binary found matching your system. It\'s probably not supported.'));
       return;
     }
-    const opts = {
-      extract: true
-    };
+    opts = opts || {extract: true};
 
     const bfpath = path();
 
