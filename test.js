@@ -161,6 +161,21 @@ test('download single file', async t => {
   await rimrafP(bin.path());
 });
 
+test('download single file, then try to load it', async t => {
+  const bin = binManager(tempfile(), 'test')
+    .src('http://foo.com/gifsicle.tar.gz', process.platform)
+    .use(process.platform === 'win32' ? 'gifsicle.exe' : 'gifsicle');
+
+  await pify(bin.load)();
+  await pify(bin.load)();
+  const files = await fsP.readdirSync(bin.path());
+
+  t.is(files.length, 1);
+  t.is(files[0], process.platform === 'win32' ? 'gifsicle.exe' : 'gifsicle');
+
+  await rimrafP(bin.path());
+});
+
 test('unload single file', async t => {
   const bin = binManager(tempfile(), 'test')
     .src('http://foo.com/gifsicle.tar.gz', process.platform)
