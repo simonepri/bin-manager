@@ -43,15 +43,15 @@ Creates a new `bmanager` instance.
 Type: `string`<br>
 Default: `''`
 
-Accepts a path which the files will be downloaded to.
+Accepts a path where the binaries will be stored to.
 
 ##### slug
 
 Type: `string`<br>
 Default: `''`
 
-Accepts an unique slug for the binary. The binary will be downloaded inside the path:
-`dist/slug`
+Accepts an unique slug for the binary.<br>
+The binary will be downloaded inside the path: `dist/slug`
 
 ### .src(url, [os], [arch])
 
@@ -106,37 +106,60 @@ Returns the full path to your binary.
 
 ### .remote()
 
-Returns the uris from where.
+Returns the URLs that will be downloaded for your platform.
 
+### .load([options], callback)
 
-### .load(callback)
-
-Runs the search for the binary. If no binary is found it will download the file
+Runs the search for the binary. If no binary is found it will download it
 using the URL provided in `.src()`.
+<br>It usese [download](https://github.com/kevva/download) under the hood.
+<br>See [here](https://github.com/kevva/download#options) all available options.
 
-### .load(callback)
+#### options
 
-Runs the search for the binary. If no binary is found it will download the file
-using the URL provided in `.src()`.
+Type: `Object`<br>
+Default: `{extract: true}`
 
-### .unload(callback)
+#### callback(err)
 
-Remove the downloaded binary, if already downloaded.
+Type: `Function`
 
-### .run([arguments], callback)
+### .unload([options], callback)
+
+Removes downloaded binaries, if presents.
+<br>It usese [del](https://github.com/sindresorhus/del) under the hood.
+<br>See [here](https://github.com/sindresorhus/del#options) all available options.
+
+#### options
+
+Type: `Object`<br>
+Default: `{extract: true}`
+
+#### callback(err)
+
+Type: `Function`
+
+### .run([arguments], [options], callback)
 
 Runs the binary. If the binary is not loaded it will also load it.
+<br>It usese [execa](https://github.com/sindresorhus/execa) under the hood.
+<br>See [here](https://github.com/sindresorhus/execa#options) all available options.
 
 #### arguments
 
 Type: `Array`<br>
 Default: `[]`
 
-#### callback(err)
+#### options
+
+Type: `Object`<br>
+Default: `{}`
+
+#### callback(err, out)
 
 Type: `Function`
 
-Returns nothing but a possible error.
+Returns a possible error and the output object.
 
 
 ## Authors
