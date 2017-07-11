@@ -3,7 +3,6 @@ const fs = require('fs');
 const nodePath = require('path');
 const lazyReq = require('lazy-req')(require);
 
-const dotSlash = lazyReq('dot-slash');
 const del = lazyReq('del');
 const download = lazyReq('download');
 const osFilterObj = lazyReq('os-filter-obj');
@@ -173,8 +172,8 @@ function binManager(destFolder, slugName) {
         callback(err);
         return;
       }
-      opts.cwd = nodePath.resolve(path());
-      execa()(dotSlash().enforce(_bin, true), argv, opts).then(result => {
+
+      execa()(bin(), argv, opts).then(result => {
         callback(null, result);
       }).catch(err => {
         callback(err);

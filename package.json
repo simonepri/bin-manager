@@ -29,7 +29,6 @@
   ],
   "dependencies": {
     "del": "^3.0.0",
-    "dot-slash": "^1.1.0",
     "download": "^6.2.5",
     "execa": "^0.7.0",
     "lazy-req": "^2.0.0",
