@@ -54,7 +54,7 @@ The binary will be downloaded inside the path: `dist/slug`
 ### .src([url], [os], [arch])
 
 Adds a source to download.
-If no argument is passed the current array of sources is returned.
+If 0 arguments are passed, the array of current setted sources is returned.
 
 #### url
 
@@ -105,7 +105,7 @@ Returns the full path to your binary.
 
 ### .remote()
 
-Returns the URLs that will be downloaded for your platform.
+Returns the URLs that will be used/was used to download the binaries for your platform.
 
 ### .load([options], callback)
 
