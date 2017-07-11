@@ -1,6 +1,6 @@
 'use strict';
 const fs = require('fs');
-const join = require('path').join;
+const nodePath = require('path');
 const lazyReq = require('lazy-req')(require);
 
 const del = lazyReq('del');
@@ -67,7 +67,7 @@ function binManager(destFolder, slugName) {
    */
 
   function path() {
-    return join(_dest, _slug);
+    return nodePath.join(_dest, _slug);
   }
 
   /**
@@ -77,7 +77,7 @@ function binManager(destFolder, slugName) {
    */
 
   function bin() {
-    return join(_dest, _slug, _bin);
+    return nodePath.join(_dest, _slug, _bin);
   }
 
   /**
