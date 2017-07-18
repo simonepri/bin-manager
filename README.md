@@ -73,6 +73,7 @@ Tie the source to a specific OS.
 Type: `string`
 
 Tie the source to a specific arch.
+> Currently not working properly see [this issue](https://github.com/kevva/os-filter-obj/issues/1)
 
 ### .dest(destination)
 
@@ -92,7 +93,7 @@ Get or set the binary path of the extracted file.
 
 Type: `string`
 
-Define which file to use as the binary.
+Define which file to use as executable.
 If undefined the current setted value is returned.
 
 ### .path()
@@ -132,7 +133,7 @@ Removes downloaded binaries, if presents.
 #### options
 
 Type: `Object`<br>
-Default: `{extract: true}`
+Default: `{}`
 
 #### callback(err)
 
@@ -165,6 +166,8 @@ Returns a possible error and the output object.
 * **Simone Primarosa** - [simonepri](https://github.com/simonepri)
 
 See also the list of [contributors](https://github.com/simonepri/bin-manager/contributors) who participated in this project.
+
+Heavily inspired from [bin-wrapper](https://github.com/kevva/bin-wrapper)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
