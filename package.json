@@ -32,7 +32,7 @@
     "download": "^6.2.5",
     "execa": "^0.7.0",
     "lazy-req": "^2.0.0",
-    "os-filter-obj": "^1.0.3"
+    "os-filter-obj": "^2.0.0"
   },
   "devDependencies": {
     "ava": "*",
