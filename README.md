@@ -73,7 +73,6 @@ Tie the source to a specific OS.
 Type: `string`
 
 Tie the source to a specific arch.
-> Currently not working properly see [this issue](https://github.com/kevva/os-filter-obj/issues/1)
 
 ### .dest(destination)
 
@@ -171,4 +170,3 @@ Heavily inspired from [bin-wrapper](https://github.com/kevva/bin-wrapper)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
