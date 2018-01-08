@@ -1,4 +1,6 @@
 # NodeJS Binary Manager [![Travis CI](https://travis-ci.org/simonepri/bin-manager.svg?branch=master)](https://travis-ci.org/simonepri/bin-manager) [![Codecov](https://img.shields.io/codecov/c/github/simonepri/bin-manager/master.svg)](https://codecov.io/gh/simonepri/bin-manager) [![npm](https://img.shields.io/npm/dm/bin-manager.svg)](https://www.npmjs.com/package/bin-manager) [![npm version](https://img.shields.io/npm/v/bin-manager.svg)](https://www.npmjs.com/package/bin-manager)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/simonepri/bin-manager.svg)](https://greenkeeper.io/)
 > 🌀 Binaries available as local nodeJS dependencies
 
 
